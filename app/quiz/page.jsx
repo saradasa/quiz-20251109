@@ -11,7 +11,7 @@ export default function Question(){
 
     const handleAnswer = (option) => {
     setSelected(option);
-    if (option === quizId.answer) {
+    if (option === quizData[0].answer) {
       setResult("正解！🎉");
     } else {
       setResult("不正解...💦");

@@ -21,3 +21,11 @@
   font-size: 20px;
   margin-bottom: 16px;
 }
+
+.result-text.green {
+  color: #4caf50; /* 緑 */
+}
+
+.result-text.red {
+  color: #f44336; /* 赤 */
+}

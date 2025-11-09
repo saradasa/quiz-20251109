@@ -1,0 +1,23 @@
+.button{
+    background-color: rgba(0, 255, 251, 0.772);
+    border-radius: 17px;
+    padding: 1rem;
+    margin: 1rem;
+}
+.conteinar{
+    justify-content: center;
+    align-items: center;
+}
+.option-btn {
+  background: #fff;
+  border: 2px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+.result-text {
+  font-size: 20px;
+  margin-bottom: 16px;
+}

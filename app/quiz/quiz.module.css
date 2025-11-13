@@ -1,31 +1,21 @@
+.title{
+    font-size: 35px;
+}
+.question{
+  font-size: 20px;
+}
 .button{
     background-color: rgba(0, 255, 251, 0.772);
     border-radius: 17px;
     padding: 1rem;
     margin: 1rem;
 }
-.conteinar{
-    justify-content: center;
-    align-items: center;
+.nextbutton{
+  background-color: rgba(55, 166, 180, 0.703);
+  border-radius: 17px;
+  padding: 1rem;
+  margin: 1rem;
 }
-.option-btn {
-  background: #fff;
-  border: 2px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-align: left;
-  transition: all 0.2s ease;
-}
-.result-text {
-  font-size: 20px;
-  margin-bottom: 16px;
-}
-
-.result-text.green {
-  color: #4caf50; /* 緑 */
-}
-
-.result-text.red {
-  color: #f44336; /* 赤 */
+.bold{
+  font-weight: bold;
 }

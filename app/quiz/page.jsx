@@ -12,6 +12,7 @@ export default function Question() {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(3600);
   const router = useRouter();
+  const [currentIndex, setCurrentIndex] = useState(1);
 
   function getRandomQuiz() {
     const index = Math.floor(Math.random() * quizData.length);
@@ -27,12 +28,14 @@ export default function Question() {
       setScore((prev) => prev - 1);
     }
     setTimeout(() => {
+      setCurrentIndex((prev) => prev + 1);
       setSelected("");
       setResult("");
       setQuizId(quizData[Math.floor(Math.random() * quizData.length)]);
     }, 1000);
   };
   const handleNext = () => {
+    setCurrentIndex((prev) => prev + 1);
     setQuizId(getRandomQuiz());
     setSelected("");
     setResult(null);
@@ -53,14 +56,17 @@ export default function Question() {
 
   return (
     <>
-      <h1 className={Style.title}>常識クイズ！</h1>
-      <p>一般常識クイズに答えよう！</p>
-      <p>
-        分からなかったら<span className={Style.bold}>次の問題</span>を押そう！
+      <p className={Style.back}>
+        <span className={Style.title}>常識クイズ！</span>
+        <span className={Style.space}>スコア：{score}　</span>
+        <span className={Style.space}>残り時間：{timeLeft}</span>
+      </p>
+      <p style={{ textAlign: "center", fontSize: "20px", marginTop: "15px" }}>
+        {currentIndex}問目
       </p>
       <div style={{ textAlign: "center", marginTop: "25px" }}>
         <div className={Style.question}>問題：{quizId.question}</div>
-        <div>
+        <div className={Style.options}>
           {quizId.options.map((option, index) => (
             <button
               className={Style.button}
@@ -74,8 +80,6 @@ export default function Question() {
         </div>
         {result && <p>{result}</p>}
         <div>
-          <p>スコア：{score}</p>
-          <p>残り時間：{timeLeft}</p>
           <button className={Style.nextbutton} onClick={() => handleNext()}>
             次の問題
           </button>

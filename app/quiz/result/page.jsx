@@ -10,7 +10,8 @@ export default function ResultPage() {
     <div style={{ textAlign: "center", marginTop: "100px" }}>
       <h1 className={Style.subtitle}>リザルト画面</h1>
       <p className={Style.font}>
-        あなたのスコアは <strong>{score} 点</strong>です！
+        あなたのスコアは <strong className={Style.point}>{score} 点</strong>
+        です！
       </p>
     </div>
   );

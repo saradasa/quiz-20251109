@@ -56,33 +56,35 @@ export default function Question() {
 
   return (
     <>
-      <p className={Style.back}>
-        <span className={Style.title}>常識クイズ！</span>
-        <span className={Style.space}>スコア：{score}　</span>
-        <span className={Style.space}>残り時間：{timeLeft}</span>
-      </p>
-      <p style={{ textAlign: "center", fontSize: "20px", marginTop: "15px" }}>
-        {currentIndex}問目
-      </p>
-      <div style={{ textAlign: "center", marginTop: "25px" }}>
-        <div className={Style.question}>問題：{quizId.question}</div>
-        <div className={Style.options}>
-          {quizId.options.map((option, index) => (
-            <button
-              className={Style.button}
-              key={index}
-              onClick={() => handleAnswer(option)}
-              disabled={!!result}
-            >
-              {option}
+      <div className={Style.containar}>
+        <p className={Style.back}>
+          <span className={Style.title}>常識クイズ！</span>
+          <span className={Style.space}>スコア：{score}　</span>
+          <span className={Style.space}>残り時間：{timeLeft}</span>
+        </p>
+        <p style={{ textAlign: "center", fontSize: "20px", marginTop: "15px" }}>
+          {currentIndex}問目
+        </p>
+        <div style={{ textAlign: "center", marginTop: "25px" }}>
+          <div className={Style.question}>問題：{quizId.question}</div>
+          <div className={Style.options}>
+            {quizId.options.map((option, index) => (
+              <button
+                className={Style.button}
+                key={index}
+                onClick={() => handleAnswer(option)}
+                disabled={!!result}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+          {result && <p>{result}</p>}
+          <div>
+            <button className={Style.nextbutton} onClick={() => handleNext()}>
+              次の問題
             </button>
-          ))}
-        </div>
-        {result && <p>{result}</p>}
-        <div>
-          <button className={Style.nextbutton} onClick={() => handleNext()}>
-            次の問題
-          </button>
+          </div>
         </div>
       </div>
     </>
